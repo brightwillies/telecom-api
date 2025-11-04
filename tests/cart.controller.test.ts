@@ -1,9 +1,9 @@
 import request from 'supertest';
-import app  from '../server';
+import app  from '../src/server';
 
 jest.useFakeTimers();
 
-describe('ExperienceCartController', () => {
+describe('CartController', () => {
   it('creates cart with 201 and Location', async () => {
     const res = await request(app).post('/api/v1/cart');
     expect(res.status).toBe(201);

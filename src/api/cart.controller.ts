@@ -1,12 +1,12 @@
 import { Request, Response } from "express";
-import { ExperienceCartService } from "../core/cart.service";
+import { CartService } from "../core/cart.service";
 import { SalesforceCartClient } from "../infrastructure/salesforce/SalesforceCartClient.double";
 
 
-export class ExperienceCartController {
+export class CartController {
 
   static async createCart(_req: Request, res: Response) {
-    const result = await ExperienceCartService.createCart();
+    const result = await CartService.createCart();
     res.setHeader('Location', `/api/v1/cart/${result.cartId}`);
     res.status(201).json(result);
   }
@@ -14,7 +14,7 @@ export class ExperienceCartController {
 
   static async getCart(req: Request, res: Response) {
     const { cartId } = req.params;
-    const cart = await ExperienceCartService.getCart(cartId);
+    const cart = await CartService.getCart(cartId);
 
     if (!cart) {
       const context = await SalesforceCartClient.getContext(cartId);
@@ -34,7 +34,7 @@ export class ExperienceCartController {
       return res.status(400).json({ error: 'Invalid input' });
     }
 
-    const result = await ExperienceCartService.addItem(cartId, { productId, quantity });
+    const result = await CartService.addItem(cartId, { productId, quantity });
     if (!result) {
       return res.status(410).json({ error: 'Cart expired' });
     }

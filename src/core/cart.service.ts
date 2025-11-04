@@ -3,7 +3,7 @@ import { CartContext, LineItem, CartResponse } from "../types";
 import { SalesforceCartClient } from "../infrastructure/salesforce/SalesforceCartClient.double";
 
 
-export class ExperienceCartService {
+export class CartService {
 
     static async createCart(): Promise<{cartId :string}>
     {
