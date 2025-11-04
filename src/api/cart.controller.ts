@@ -10,6 +10,7 @@ export class CartController {
     res.setHeader('Location', `/api/v1/cart/${result.cartId}`);
     res.status(201).json(result);
   }
+  
 
 
   static async getCart(req: Request, res: Response) {

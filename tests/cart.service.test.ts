@@ -25,6 +25,7 @@ describe('CartService', () => {
     expect(result?.total).toBe(99.99);
   });
 
+  
   it('expires cart after 15 minutes', async () => {
     const { cartId } = await CartService.createCart();
     jest.advanceTimersByTime(16 * 60 * 1000);

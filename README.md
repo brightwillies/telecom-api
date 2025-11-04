@@ -16,6 +16,7 @@ Implements a transient cart with **15-minute expiry**, **semantic HTTP**, and **
 
 ---
 
+
 ## API Endpoints
 
 | Method | Path | Purpose |

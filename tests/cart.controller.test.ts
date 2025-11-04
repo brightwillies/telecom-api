@@ -22,6 +22,8 @@ describe('CartController', () => {
     expect(res.body.error).toBe('Cart expired');
   });
 
+
+  
   it('adds item successfully', async () => {
     const createRes = await request(app).post('/api/v1/cart');
     const cartId = createRes.body.cartId;
