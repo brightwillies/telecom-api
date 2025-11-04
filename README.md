@@ -1,8 +1,7 @@
 # Telecom Experience API
 
-A **thin, type-safe, production-patterned** shopping cart API built on top of a **non-persistent Salesforce cart context**.  
-Fully tested, documented, and ready for submission.
-
+A **lightweight, type-safe shopping cart API** built for telecom customer journeys.  
+Implements a transient cart with **15-minute expiry**, **semantic HTTP**, and **clean architecture**.
 ---
 
 ## Features
